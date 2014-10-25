@@ -10,7 +10,7 @@ class SessionController < ApplicationController
      if user && user.authenticate(params[:password])
       session[:user_id] = user.id
 
-    redirect_to "/users" # gotta change to the find gym button page later
+    redirect_to "/users/#{user.id}" # gotta change to the find gym button page later
      else
       @error = true
       render :new

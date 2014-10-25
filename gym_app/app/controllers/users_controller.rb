@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
 
-  def index
-    @users = User.all
-  end
-
   def new
     render :new
   end
@@ -11,7 +7,11 @@ class UsersController < ApplicationController
   def create
     new_user = User.create(name: params[:name], email: params[:email], password: params[:password], latitude: params[:latitude], longitude: params[:longitude])
 
-    redirect_to "/users"
+    redirect_to "/login"
+  end
+
+  def login
+    render :login
   end
 
   def show

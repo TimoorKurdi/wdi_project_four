@@ -1,14 +1,5 @@
 <h3>Hello, <%=@user.name%> </h3>
 
-<h3> Log out below: </h3>
-
-<form action="/session" method="POST">
-
-   <input name="authenticity_token" value="<%= form_authenticity_token()%>" type="hidden">
-   <input type="hidden" name="_method" value="DELETE">
-    <button>Logout</button>
-</form>
-
 <br>
 
 <h3> Edit your profile below: </h3>
@@ -44,6 +35,15 @@
 
   <button>Update your profile</button>
 
+</form>
+
+<h3> Log out below: </h3>
+
+<form action="/session" method="POST">
+
+   <input name="authenticity_token" value="<%= form_authenticity_token()%>" type="hidden">
+   <input type="hidden" name="_method" value="DELETE">
+    <button>Logout</button>
 </form>
 
 <br>
