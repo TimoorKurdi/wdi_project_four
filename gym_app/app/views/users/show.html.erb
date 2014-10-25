@@ -1,0 +1,58 @@
+<h3>Hello, <%=@user.name%> </h3>
+
+<h3> Log out below: </h3>
+
+<form action="/session" method="POST">
+
+   <input name="authenticity_token" value="<%= form_authenticity_token()%>" type="hidden">
+   <input type="hidden" name="_method" value="DELETE">
+    <button>Logout</button>
+</form>
+
+<br>
+
+<h3> Edit your profile below: </h3>
+
+<form action="/users/<%=@user.id%>" method="POST">
+  <label>
+    Name:
+    <input name="name" value="<%=@user.name%>"/>
+  </label>
+
+  <label>
+    Email:
+    <input name="email" value="<%=@user.email%>"/>
+  </label>
+
+  <label>
+    Password:
+    <input name="password" type="password"/>
+  </label>
+
+  <label>
+    Latitude:
+    <input name="latitude" value="<%=@user.latitude%>"/>
+  </label>
+
+  <label>
+    Longitude:
+    <input name="longitude" value="<%=@user.longitude%>"/>
+  </label>
+
+  <input name="_method" value="PUT" type="hidden" />
+  <input name="authenticity_token" value="<%= form_authenticity_token()%>" type="hidden">
+
+  <button>Update your profile</button>
+
+</form>
+
+<br>
+
+<h3>We are sad to see you go, but come back anytime!</h3>
+
+<form action="/users/<%= @user.id %>" method="POST" >
+
+  <input name="_method" value="DELETE" type="hidden" />
+  <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+  <button>Delete your profile</button>
+</form>

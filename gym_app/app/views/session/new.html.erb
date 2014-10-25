@@ -1,0 +1,32 @@
+<% if @error %>
+  <p style='color: red;'>Try again!</p>
+<% end %>
+
+<h3> Current users: Please sign in here: </h3>
+
+<form action="/session" method="POST">
+  <label>
+    Email:
+    <input name="email">
+  </label>
+
+  <label>
+    Password:
+    <input name="password" type="password">
+  </label>
+
+  <input name="authenticity_token" value="<%= form_authenticity_token()%>" type="hidden">
+
+  <button>Sign in</button>
+
+</form>
+
+<br>
+
+<h3> New users: Please sign up below: </h3>
+
+      <form action="/sign-up" method="GET">
+
+      <button>Sign-up</button>
+
+</form>
