@@ -35,6 +35,8 @@ gem 'awesome_print'
 
 gem 'rails-erd'
 
+gem 'geocoder'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

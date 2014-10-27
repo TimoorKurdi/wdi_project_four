@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024201100) do
+ActiveRecord::Schema.define(version: 20141027160114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20141024201100) do
   create_table "gyms", force: true do |t|
     t.string   "type"
     t.integer  "price"
-    t.integer  "latitude"
-    t.integer  "longitude"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,8 +31,7 @@ ActiveRecord::Schema.define(version: 20141024201100) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "latitude"
-    t.integer  "longitude"
+    t.integer  "zipcode"
   end
 
 end

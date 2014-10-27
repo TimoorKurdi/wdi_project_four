@@ -1,7 +1,5 @@
 <h3>Hello, <%=@user.name%> </h3>
 
-<br>
-
 <h3> Edit your profile below: </h3>
 
 <form action="/users/<%=@user.id%>" method="POST">
@@ -20,14 +18,10 @@
     <input name="password" type="password"/>
   </label>
 
-  <label>
-    Latitude:
-    <input name="latitude" value="<%=@user.latitude%>"/>
-  </label>
 
   <label>
-    Longitude:
-    <input name="longitude" value="<%=@user.longitude%>"/>
+    Zipcode:
+    <input name="zipcode" value="<%=@user.zipcode%>"/>
   </label>
 
   <input name="_method" value="PUT" type="hidden" />
@@ -56,3 +50,22 @@
   <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
   <button>Delete your profile</button>
 </form>
+
+
+
+  <h3>Hit submit below for preferential searching</h3>
+
+  <form action="/users/<%= @user.id %>/gyms" method="GET">
+
+  <button>Submit</button>
+</form>
+
+
+
+
+
+
+
+
+
+
