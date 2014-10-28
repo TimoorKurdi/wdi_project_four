@@ -16,8 +16,6 @@ Rails.application.routes.draw do
   delete '/session' =>'session#destroy'
 
   get '/users/:id/gyms' => 'gyms#show'
-  # post '' => 'gyms#create'
-
-  # get '/users/:id/gyms/results' => 'gyms#find'
+  get '/users/:id/show' => 'gyms#show'
 
 end
