@@ -31,9 +31,9 @@
 var map;
 var infowindow;
 
-  function setUrl(url) {
-    top.location.href= url;
-    }
+  // function setUrl(url) {
+  //   top.location.href= url;
+  //   }
 
 function initialize(lat, lng) {
   var lat_long = new google.maps.LatLng(lat, lng);
@@ -66,14 +66,16 @@ function createMarker(place) {
   var marker = new google.maps.Marker({
     map: map,
     position: place.geometry.location,
-    title: "Click me"
+     // title: "Click me"
   });
 
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.name);
     infowindow.open(map, this);
-    setUrl('http://www.google.com');
+    // window.location = 'http://www.google.com';
+    // setUrl('http://www.google.com');
   });
+  google.maps.event.addDomListener(window, 'resize', function() { map.setCenter(place.geometry.location); });
 }
 
 document.getElementById('button').addEventListener('click', function(e) {
