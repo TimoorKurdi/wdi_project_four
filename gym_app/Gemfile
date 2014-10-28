@@ -37,6 +37,10 @@ gem 'rails-erd'
 
 gem 'geocoder'
 
+gem 'valid_email'
+
+gem 'validates_email_format_of'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

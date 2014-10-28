@@ -1,10 +1,10 @@
-<h3>Welcome <%=@user.name %> : Enter a location to search. </h3>
+<h3>Welcome <%=@user.name %> : Enter an address to search. </h3>
 
 <form action="/users/<%=@user.id%>/show" method="GET">
 
 <label>
-   Location:
-    <input id="zipcodeinput" name="zipcode" value="<%=@user.zipcode%>"/>
+   Address:
+    <input id="locationinput" name="location" value="<%=@user.zipcode%>"/>
   </label>
 
 <input name="authenticity_token" value="<%= form_authenticity_token()%>" type="hidden">
@@ -30,6 +30,10 @@
     <script>
 var map;
 var infowindow;
+
+  function setUrl(url) {
+    top.location.href= url;
+    }
 
 function initialize(lat, lng) {
   var lat_long = new google.maps.LatLng(lat, lng);
@@ -61,19 +65,21 @@ function createMarker(place) {
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
     map: map,
-    position: place.geometry.location
+    position: place.geometry.location,
+    title: "Click me"
   });
 
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.name);
     infowindow.open(map, this);
+    setUrl('http://www.google.com');
   });
 }
 
 document.getElementById('button').addEventListener('click', function(e) {
   e.preventDefault();
   var xhr = new XMLHttpRequest();
-  var zip_search = document.getElementById('zipcodeinput').value;
+  var zip_search = document.getElementById('locationinput').value;
   // console.log(zip_search)
   xhr.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address='+zip_search+'&key=AIzaSyDvh63FDSrWR7ONSxbc_2USKDBeuVujaC4', true);
 
