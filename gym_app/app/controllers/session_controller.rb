@@ -1,8 +1,8 @@
 class SessionController < ApplicationController
 
-  def new
+ def new
     render :new
-  end
+ end
 
   def create
     user = User.find_by(email: params[:email])
@@ -10,16 +10,15 @@ class SessionController < ApplicationController
      if user && user.authenticate(params[:password])
       session[:user_id] = user.id
 
-    redirect_to "/users/#{user.id}" # gotta change to the find gym button page later
+    redirect_to "/users/#{user.id}"
      else
-      @error = true
-      render :new
+        @error = true
+        render :new
      end
-   end
+  end
 
-   def destroy
-    reset_session
-    redirect_to '/'
+ def destroy
+     reset_session
+     redirect_to '/'
    end
-
-end # ends class
+end

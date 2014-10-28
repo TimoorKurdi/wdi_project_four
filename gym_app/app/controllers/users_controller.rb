@@ -5,27 +5,27 @@ class UsersController < ApplicationController
     @user = User.find_by(id: session[:user_id])
   end
 
-  def new
-    render :new
-  end
+    def new
+      render :new
+    end
 
-  def create
-    new_user = User.create(name: params[:name], email: params[:email], password: params[:password], zipcode: params[:zipcode])
+     def create
+      new_user = User.create(name: params[:name], email: params[:email], password: params[:password], zipcode: params[:zipcode])
 
-    redirect_to "/login"
-  end
+      redirect_to "/login"
+    end
 
-  def login
-    render :login
-  end
+      def login
+        render :login
+      end
 
-  def show
-    @user = User.find_by(id: session[:user_id])
+    def show
+      @user = User.find_by(id: session[:user_id])
 
-    if @user
-      render :show
-    else
-      redirect_to '/'
+      if @user
+        render :show
+      else
+        redirect_to '/'
     end
 
   end
@@ -38,12 +38,11 @@ class UsersController < ApplicationController
     redirect_to '/users'
   end
 
-  def destroy
+def destroy
     @user = User.find(params[:id])
 
-    @user.destroy
+      @user.destroy
 
     redirect_to '/'
   end
-
-end # ends class user
+end

@@ -2,20 +2,20 @@
 
 <form action="/users/<%=@user.id%>/show" method="GET">
 
-<label>
-   Address:
-    <input id="locationinput" name="location" value="<%=@user.zipcode%>"/>
-  </label>
+    <label>
+    Address:
+      <input id="locationinput" name="location" value="<%=@user.zipcode%>"/>
+      </label>
 
-<input name="authenticity_token" value="<%= form_authenticity_token()%>" type="hidden">
+    <input name="authenticity_token" value="<%= form_authenticity_token()%>" type="hidden">
 <button id="button">Find a gym near me</button>
 
 </form>
 
-<title>Place searches</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <style>
+    <title>Place searches</title>
+      <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <style>
       html, body, #map-canvas {
         height: 100%;
         margin: 0px;
@@ -26,4 +26,4 @@
 
   <body>
     <div id="map-canvas"></div>
-  </body>
+</body>
