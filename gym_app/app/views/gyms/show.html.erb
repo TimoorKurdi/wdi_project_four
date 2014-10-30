@@ -1,9 +1,8 @@
-<h3>Welcome <%=@user.name %> : Enter an address to search. </h3>
+<h4 id="search">Welcome <%=@user.name %>! Enter an address or zip to search. </h4>
 
 <form action="/users/<%=@user.id%>/show" method="GET">
 
     <label>
-    Address:
       <input id="locationinput" name="location" value="<%=@user.zipcode%>"/>
       </label>
 
@@ -15,13 +14,7 @@
     <title>Place searches</title>
       <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
         <meta charset="utf-8">
-        <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-    </style>
+
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
 
   <body>

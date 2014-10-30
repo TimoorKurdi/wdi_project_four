@@ -1,32 +1,45 @@
+<!-- <video autoplay loop poster="polina.jpg" id="bgvid">
+<source src="polina.webm" type="video/webm">
+<source src="polina.mp4" type="video/mp4">
+</video> -->
+
+
 <% if @error %>
   <p style='color: red;'>Try again! Be sure to use the correct email format and domain when signing up.</p>
 <% end %>
 
-  <h3> Current users: Please sign in here: </h3>
+    <h3 id="welcome"> Welcome to GET FIT!</h3>
+    <h4 id="current">Current users: Please sign in here:</h4>
+
 
     <form action="/session" method="POST">
+    <div id="input">
     <label>
      Email:
       <input name="email">
     </label>
 
-      <label>
+    <br>
+
+      <label id="password">
         Password:
           <input name="password" type="password">
       </label>
+    </div>
 
     <input name="authenticity_token" value="<%= form_authenticity_token()%>" type="hidden">
-
-      <button>Sign in</button>
-
+      <div class="wrapper">
+      <button id="signin">Sign in</button>
+      </div>
    </form>
 
   <br>
 
-    <h3> New users: Please sign up below: </h3>
+    <h4 id="newusers"> New users: Please sign up below: </h4>
 
       <form action="/sign-up" method="GET">
-
-      <button>Sign-up</button>
-
+        <div class="signup">
+      <button id="signup">Sign-up</button>
+        </div>
 </form>
+

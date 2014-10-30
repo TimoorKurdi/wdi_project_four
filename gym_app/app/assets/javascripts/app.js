@@ -1,5 +1,4 @@
 window.onload = function() {
-
 var map;
   var infowindow;
 
@@ -46,6 +45,7 @@ function createMarker(place) {
 
         document.getElementById('button').addEventListener('click', function(e) {
         e.preventDefault();
+        // console.log("button clicked")
           var xhr = new XMLHttpRequest();
           var zip_search = document.getElementById('locationinput').value;
           xhr.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address='+zip_search+'&key=AIzaSyDvh63FDSrWR7ONSxbc_2USKDBeuVujaC4', true);

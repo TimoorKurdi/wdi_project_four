@@ -1,49 +1,61 @@
-<h3>Hello, <%=@user.name%> </h3>
+<h3 id="hello">Hello, <%=@user.name%> </h3>
 
-<h3> Edit your profile below: </h3>
-
-<form action="/users/<%=@user.id%>" method="POST">
-    <label>
-      Name:
-      <input name="name" value="<%=@user.name%>"/>
-    </label>
-
-        <label>
-        Email:
-        <input name="email" value="<%=@user.email%>"/>
-      </label>
-
-      <label>
-      Password:
-      <input name="password" type="password"/>
-      </label>
-
-    <label>
-      Zipcode:
-      <input name="zipcode" value="<%=@user.zipcode%>"/>
-    </label>
-
-     <input name="_method" value="PUT" type="hidden" />
-   <input name="authenticity_token" value="<%= form_authenticity_token()%>" type="hidden">
- <button>Update your profile</button>
-</form>
-
- <h3> Log out below: </h3>
    <form action="/session" method="POST">
      <input name="authenticity_token" value="<%= form_authenticity_token()%>" type="hidden">
         <input type="hidden" name="_method" value="DELETE">
-         <button>Logout</button>
+
+         <div class="logout">
+      <button id="logout">Logout</button>
+        </div>
      </form>
+
+     <br>
+
+  <h4 id="submit">Hit submit to start searching for a gym near you!</h4>
+  <br>
+    <form action="/users/<%= @user.id %>/gyms" method="GET">
+    <button id="submitforgym">Submit</button>
+  </form>
+
   <br>
 
-  <h3>We are sad to see you go, but come back anytime!</h3>
+<h4 id="edit"> Edit your profile below: </h4>
+
+<form action="/users/<%=@user.id%>" method="POST">
+  <div id="label">
+    <label>
+      <input id="one" name="name" placeholder="Edit name"/>
+    </label>
+
+        <label>
+        <input id="two" name="email" placeholder="Edit email"/>
+      </label>
+
+      <br>
+      <br>
+
+      <label>
+      <input id="three" name="password" placeholder="Edit password"/>
+      </label>
+
+    <label>
+      <input id="four" name="zipcode" placeholder="Edit zipcode"/>
+    </label>
+  </div>
+
+     <input name="_method" value="PUT" type="hidden" />
+   <input name="authenticity_token" value="<%= form_authenticity_token()%>" type="hidden">
+   <div id="update">
+    <br>
+ <button id="update">Update your profile</button>
+</div>
+</form>
+
+<br>
+
+  <h4 id="delete">We are sad to see you go, but come back anytime!</h4>
       <form action="/users/<%= @user.id %>" method="POST" >
       <input name="_method" value="DELETE" type="hidden" />
       <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
      <button>Delete your profile</button>
-  </form>
-
-  <h3>Hit submit to start searching for a gym near you!</h3>
-    <form action="/users/<%= @user.id %>/gyms" method="GET">
-    <button>Submit</button>
   </form>

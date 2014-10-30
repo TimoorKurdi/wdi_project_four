@@ -1,3 +1,135 @@
-body {
-  background-color: gray;
+html, body, #map-canvas {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
 }
+
+body {
+    background-image: url("http://crucepsteam.files.wordpress.com/2013/04/wallpaper-1477398.jpg");
+     background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#welcome {
+  text-align: center;
+  color: white;
+}
+
+#current {
+  text-align: center;
+  margin-right: -20px;
+  color: white;
+}
+
+#input {
+  color: red;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.wrapper {
+  text-align: center;
+  margin-right: -20px;
+}
+
+#password {
+  margin-left: -33px;
+}
+
+#newusers {
+  text-align: center;
+  margin-right: -40px;
+  color: white;
+}
+
+.signup {
+  text-align: center;
+  margin-top: -6px;
+  margin-right: -20px;
+}
+
+.logout{
+  margin-top: -33px;
+  margin-left: 1200px;
+}
+
+#edit {
+  font-family: sans-serif;
+}
+
+#hello {
+  color: white;
+}
+
+#edit {
+  color: white;
+}
+
+#label {
+  font-weight: bolder;
+  margin-left: 200px;
+}
+
+#submit {
+  color: white;
+}
+
+#delete {
+  color: white;
+  margin-top: 100px;
+}
+
+#update {
+  /*text-align: center;*/
+  margin-right: -250px;
+  margin-top: -1px;
+}
+
+#one {
+  margin-left: -200px;
+}
+
+#two {
+  margin-left: -12px;
+}
+
+#three {
+  margin-left: -200px;
+}
+
+#four {
+  margin-left: -10px;
+}
+
+#submitforgym {
+  margin-top: -60px;
+}
+
+#search {
+  color: white;
+}
+
+#thankyou {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+#login {
+  color: white;
+}
+
+/*video#bgvid {
+position: fixed; right: 0; bottom: 0;
+min-width: 100%; min-height: 100%;
+width: auto; height: auto; z-index: -100;
+background: url(polina.jpg) no-repeat;
+background-size: cover;
+}
+
+*/
